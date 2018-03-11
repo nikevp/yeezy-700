@@ -1,0 +1,47 @@
+(function() {
+try {
+    (function() {
+    var mid = document.createElement('script'); mid.type = 'text/javascript'; mid.async = true;
+    mid.src = '//mathid.mathtag.com/d/i.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mid, s);
+})();
+
+(window.MathIDInits = window.MathIDInits || []).push(function() {
+    MathID.getData({mt_id:'1070513',ccid:'',cuid:'',mm_uuid:'9c1c5a19-41a1-4d00-aee7-c298f6ee9a1a',src:'mt2'}).then(function(data) {
+        var p = document.createElement('script');
+        p.src = '//pixel.mathtag.com/event/js?mt_id=1070513&mt_adid=172909&skipsync=20,10025,10002,10008,10009,10010,10011,10013,10017,10025,10031,10042,10054,10082&s1=PRODUCT%7CYEEZY%20BOOST%20700%20(B75571)&v3=0&v4=0&v6=SHOES&v7=BSY42&s7=BSY42&v8=300.00&v9=B75571&s9=ADIDAS&v10=US&no_log&mathid_data=' + encodeURIComponent(data);
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(p, s);
+    });
+});//used to sync advertiser without leaking referer to final destination
+(function() {
+    try {
+	var frm = document.createElement('iframe');
+	frm.style.visibility = 'hidden';
+	frm.style.display = 'none';
+	frm.src = "https://pixel.mathtag.com/sync/iframe?mt_uuid=9c1c5a19-41a1-4d00-aee7-c298f6ee9a1a&no_iframe=1&mt_adid=172909&skipsync=20,10025,10002,10008,10009,10010,10011,10013,10017,10025,10031,10042,10054,10082";
+	frm.setAttribute("id", "mm_sync_back_ground");
+	var trys = 0;
+        var interval = setInterval(function(){
+            if (trys++ < 20 && interval && !document.getElementById("mm_sync_back_ground")) {
+                if (document.body) {
+                    if (interval) {
+                        clearInterval(interval);
+                        interval = 0;
+                    }
+                    document.body.appendChild(frm);
+                }
+            }
+        }, 100);
+    }
+    catch(ex)
+    {
+	document.createElement("img").src="//pixel.mathtag.com/error/img?error_domain=synciframe&what="+encodeURIComponent(ex.message);
+    }
+})();
+
+}
+catch(ex)
+{
+   document.createElement("img").src="//pixel.mathtag.com/error/img?error_domain=wrap&what="+encodeURIComponent(ex.message);
+}
+})();
